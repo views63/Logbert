@@ -1,4 +1,4 @@
-#region Copyright © 2015 Couchcoding
+#region Copyright ?2015 Couchcoding
 
 // File:    MainForm.cs
 // Package: Logbert

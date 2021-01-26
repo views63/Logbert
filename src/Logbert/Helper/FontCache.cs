@@ -65,14 +65,25 @@ namespace Couchcoding.Logbert.Helper
     {
       lock (mFontSync)
       {
-        string fontKey = $"{name}_{size}_{style}";
-
-        if (!mFontCache.ContainsKey(fontKey))
+        if (name.Contains("宋体") || name.Contains("Microsoft Sans Serif"))
         {
-          mFontCache[fontKey] = new Font(name, size, style);
+          if (size < 10)
+          {
+            size = 10;
+          }
+          name = "等距更纱黑体 SC";
         }
 
-        return mFontCache[fontKey];
+        
+        string fontKey = $"{name}_{size}_{style}";
+        if (mFontCache.TryGetValue(fontKey, out var font))
+        {
+          return mFontCache[fontKey];
+        }
+
+        font = new Font(name, size, style);
+        mFontCache[fontKey] = font;
+        return font;
       }
     }
 
