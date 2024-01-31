@@ -1,4 +1,4 @@
-#region Copyright © 2015 Couchcoding
+#region Copyright Â© 2015 Couchcoding
 
 // File:    Program.cs
 // Package: Logbert
